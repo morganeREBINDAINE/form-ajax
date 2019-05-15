@@ -1,0 +1,4 @@
+This is a very simple form, using native Javascript, PHP with Ajax.
+
+When we submit form, datas are send asynchronously, and added in the array below.
+We can delete or update, a message will be displayed
