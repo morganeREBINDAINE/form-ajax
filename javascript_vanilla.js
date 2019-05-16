@@ -1,5 +1,7 @@
-form = document.querySelector('#form')
-document.querySelector('#message')
+var form = document.querySelector('#form')
+var message = document.querySelector('#message')
+var nom = document.querySelector('#formNom')
+var age = document.querySelector('#formAge')
 
 var onEdit = function(event) {
    event.preventDefault()
@@ -84,12 +86,13 @@ var addDatas = function(event) {
          return
       }
    })
-   if(isNaN(parseInt(document.querySelector.value))) {
-      message.textContent = 'Please enter a number for age'
+   if(isNaN(+(age.value))) {
+      message.textContent = 'Please enter a valid number for age'
       return
    }
-   if(/\d/.test(document.querySelector('#formNom'))) {
+   if(/\d/.test(nom.value)) {
       message.textContent = 'Name should not contains number(s)'
+      return
    }
    if (form.querySelector('#formId').value === ''){
       xml = new XMLHttpRequest()
@@ -120,6 +123,8 @@ var addDatas = function(event) {
       var formdata = new FormData(form)
       xml.send(formdata)
    }
+   age.value = ''
+   nom.value = ''
 }
 
 form.addEventListener('submit', addDatas)
