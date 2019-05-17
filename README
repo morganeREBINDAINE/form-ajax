@@ -1,4 +1,6 @@
-This is a very simple form, using native Javascript & jQuery, PHP with Ajax.
+05/2019
+
+This is a very simple form, using native Javascript & jQuery (with Ajax), PHP & MySQL.
 
 When we submit form, there is some little verifications,
 then datas are send asynchronously, and added in the 2 arrays below : one get its datas from db, the other one from a txt file.
