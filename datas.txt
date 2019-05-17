@@ -1,0 +1,8 @@
+33|morgane|5
+32|banane|2
+31|morgane|5
+29|morgane|55
+26|morgane|55
+9|banane|89
+8|fruit|65
+3|morgane|21

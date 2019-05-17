@@ -42,29 +42,64 @@
       h1, h3, h4 {
          text-align: center;
       }
+      #tables {
+         display: flex;
+         justify-content: space-around;
+         width: 70%;
+         margin: auto;
+      }
+      #text {
+         display: none;
+      }
    </style>
 </head>
 <body>
    <h1>Ajax form</h1>
-   
+   <button id="text_button">CLICK TO READ ME!</button>
+   <div id="text">
+      <ul>
+         <li>Enter datas in those inputs</li>
+         <li>A database will be create if not exists yet, then datas will be stored, recovered dynamically and added to the first table, using native Javascript with Ajax.</li>
+         <li>In a second time, datas will be stored in a txt file, which will be created if not exists too, and added to the second table using jQuery with Ajax</li>
+         <li>For both, you can edit or remove datas from buttons</li>
+      </ul>
+   </div>
    <form action="#" method="post" id="form">
       <input type="hidden" name="id" id="formId">
       <input type="text" name="nom" placeholder="nom" id="formNom">
       <input type="text" name="age" placeholder="age" id="formAge">
-      <input type="submit">
+      <button id="js">send</button>
+      <button id="empty">empty form</button>
    </form>
    <span id="message"></span>
    <hr>
-   <h3>Table handled by Javascript Vanilla</h3>
-   <h4>Datas stored in DB</h4>
-   <table id="table">
-      <tr>
-         <td>nom</td>
-         <td>age</td>
-         <td>boutons</td>
-      </tr>
-   </table>
-   <br>
-   <script src="javascript_vanilla.js"></script>
+   <div id="tables">
+      <div>
+         <h3>Table 1</h3>
+         <h4>Datas from DB, got by JS</h4>
+         <table id="table">
+            <tr>
+               <td>nom</td>
+               <td>age</td>
+               <td>boutons</td>
+            </tr>
+         </table>
+         <span class="messageTable"></span>
+      </div>
+      <div>
+         <h3>Table 2</h3>
+         <h4>Datas from txt file, got by jQuery</h4>
+         <table id="table2">
+            <tr>
+               <td>nom</td>
+               <td>age</td>
+               <td>boutons</td>
+            </tr>
+         </table>
+         <span class="messageTable"></span>
+      </div>
+   </div>
+   <script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="ajax.js"></script>
 </body>
 </html>

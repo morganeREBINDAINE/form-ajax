@@ -5,7 +5,7 @@ class Sql
 
    public function __construct() {
       $db = new PDO('mysql:host=localhost;dbname=utilisateur;charset=utf8', 'root', '');
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
       $this->db = $db;
    }
@@ -29,8 +29,13 @@ class Sql
    }
 
    function get() {
-      $req = $this->db->query('SELECT * FROM data');
-      return $req->fetchAll();
+      try {
+         $req = $this->db->query('SELECT * FROM data ORDER BY id');
+         return $req->fetchAll();
+      }
+      catch(PDOException $e) {
+         return ['error' => 'There is no datas yet'];
+      }
    }
 
    function getFromId() {
