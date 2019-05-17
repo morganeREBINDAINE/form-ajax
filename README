@@ -1,4 +1,5 @@
-This is a very simple form, using native Javascript, PHP with Ajax.
+This is a very simple form, using native Javascript & jQuery, PHP with Ajax.
 
-When we submit form, datas are send asynchronously, and added in the array below.
-We can delete or update, a message will be displayed
+When we submit form, there is some little verifications,
+then datas are send asynchronously, and added in the 2 arrays below : one get its datas from db, the other one from a txt file.
+We can delete or edit by clicking on a button, a message will be displayed, and datas updated from db & txt file
